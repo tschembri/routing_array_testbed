@@ -2,8 +2,9 @@ import React from "react";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBarContent from "./appbar";
-import Routing from "./routing";
-import Page3 from "./page3";
+import Page2 from "./page2";
+import Page1 from "./page1";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const drawerWidth = 320;
 
@@ -26,6 +27,24 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+const routes = [
+  {
+    path: "/page1",
+    exact: true,
+    main: () => <Page1 />
+  },
+  {
+    path: "/page2",
+    exact: true,
+    main: () => <Page2 />
+  },
+  {
+    path: "/",
+    exact: true,
+    main: () => <Page1 />
+  }
+];
+
 export default function Main(props) {
   const classes = useStyles();
   return (
@@ -35,8 +54,15 @@ export default function Main(props) {
       <AppBarContent />
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Routing />
-        <Page3 />
+
+        {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            component={route.main}
+          />
+        ))}
       </main>
     </div>
   );
