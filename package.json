@@ -1,0 +1,31 @@
+{
+  "title": "Material demo",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "main": "index.tsx",
+  "devDependencies": {
+    "react-scripts": "latest"
+  },
+  "description": "https://github.com/mui-org/material-ui/blob/master/docs/src/pages/components/drawers/PermanentDrawerLeft.tsx",
+  "dependencies": {
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "latest",
+    "@types/material-uiIcons": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "formik": "1.5.8",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "5.0.1",
+    "react-swipeable-views": "0.13.3",
+    "typescript": "latest",
+    "yup": "0.27.0"
+  },
+  "keywords": [],
+  "name": "routing-testbed",
+  "version": "0.0.37"
+}
