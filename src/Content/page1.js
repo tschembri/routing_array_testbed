@@ -10,7 +10,7 @@ function Content(props) {
         to={{
           pathname: "/page2",
           state: {
-            haha: "true111"
+            haha1: "true111"
           }
         }}
       >

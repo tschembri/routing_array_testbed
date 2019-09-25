@@ -5,6 +5,7 @@ import AppBarContent from "./appbar";
 import Page2 from "./page2";
 import Page1 from "./page1";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 const drawerWidth = 320;
 
@@ -45,8 +46,17 @@ const routes = [
   }
 ];
 
-export default function Main(props) {
+function Main(props) {
   const classes = useStyles();
+  let haha = "x";
+
+  if (typeof props.location.state === "undefined") {
+    haha = "no props";
+  } else {
+    haha = null;
+    var { haha1 } = props.location.state;
+  }
+  console.log("main", props);
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -63,7 +73,10 @@ export default function Main(props) {
             component={route.main}
           />
         ))}
+        <p>{haha1}fdfd</p>
       </main>
     </div>
   );
 }
+
+export default withRouter(Main);
